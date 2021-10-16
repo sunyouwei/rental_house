@@ -177,7 +177,7 @@ https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
 |  price_count  |   number  | 是   |  1 | 补收金额总计   |
 |  rent_deadline  |   date  | 是   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 退租日期   |
 |  rent_price_count  |   number  | 是   |  1 | 退回租金   |
-|  tenant  |   object  | 是   |  1 | 退租时租客的信息   |
+|  tenant  |   object  | 是   |  {} | 退租时租客的信息   |
 |  tenant_no  |   string  | 是   |  1 | 租客_id   |
 |  water_price  |   number  | 否   |  1 | 退租时水费单价   |
 |  water_price_count  |   number  | 否   |  1 | 补收水费   |
@@ -192,9 +192,9 @@ https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
 |  desc  |   string  | 否   |  顺利 | 退房描述   |
 |  back_price_count  |   number  | 是   |  1 | 退回金额总计   |
 |  end_date  |   date  | 是   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 退房日期   |
-|  house  |   object  | 是   |  1 | 退房时房屋的信息   |
+|  house  |   object  | 是   |  {} | 退房时房屋的信息   |
 |  house_no |   string  | 是   | 0 | 房屋_id|
-|  house_owner  |   object  | 是   |  1 | 退房时房主的信息   |
+|  house_owner  |   object  | 是   |  {} | 退房时房主的信息   |
 |  images |   array  | 否   | ['cloud://a.png'] | 退房图片url|
 |  pay_way  |   string  | 否   |  微信 | 支付方式   |
 |  ple_price_count  |   number  | 是   |  1 | 退回押金   |
