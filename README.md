@@ -8,7 +8,7 @@
 
 
 
-- [ ] 以后将完善更多资料，路过的小伙伴帮忙点个赞吧
+- [ ] 以后将完善更多资料，路过的小伙伴帮忙点个Star吧
 #### [体验前请仔细阅读使用手册](https://docs.qq.com/doc/DSWtVT0F2UE15eEJU)
 https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
 
