@@ -1,4 +1,4 @@
-### 面向二房东管理出租房、记账的场景
+### 围绕二房东管理出租房、交房、交租、租客入住、收租、退租、退房的场景
 - 耗时一个月的下班时间
 - 前端采用小程序原生组件和weui-miniprogram扩展组件
 - 后端采用微信云开发
@@ -8,7 +8,7 @@
 
 
 
-- [ ] 以后将完善更多资料，路过的小伙伴帮忙点个Star吧
+- [ ] 以后将完善更多资料，路过的小伙伴帮忙点个star吧
 #### [体验前请仔细阅读使用手册](https://docs.qq.com/doc/DSWtVT0F2UE15eEJU)
 https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
 
@@ -122,35 +122,39 @@ https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
 |  _id  |   string  | 是   | 18ed0968616a6b040044bbc0239c660d  | id索引   |
 |  _openid  |   string  | 是   |  az_Au | 微信用户的_openid   |
 |  create_time  |   date  | 是   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 创建时间   |
+|  confirm_time  |   date  | 否   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 确认账单时间   |
 |  desc  |   string  | 否   |  顺利 | 收租描述   |
 |  water_price  |   number  | 否   |  1 | 收租时水费单价   |
-|  water_price_count  |   number  | 否   |  1 | 实收水费   |
+|  water_price_count  |   number  | 否   |  1 | 应收水费   |
 |  water_scale  |   number  | 否   |  1 | 收租时水表读数   |
 |  ele_price  |   number  | 否   |  1 | 收租时电费单价   |
-|  ele_price_count  |   number  | 否   |  1 | 实收电费   |
+|  ele_price_count  |   number  | 否   |  1 | 应收电费   |
 |  ele_scale  |   number  | 否   |  1 | 收租时电表读数   |
 |  fix_price  |   number  | 是   |  1 | 固定费用/月   |
-|  fix_price_count  |   number  | 是   |  1 | 实收固定费用   |
+|  fix_price_count  |   number  | 是   |  1 | 应收固定费用   |
 |  gas_price  |   number  | 否   |  1 | 收租时燃气费单价   |
-|  gas_price_count  |   number  | 否   |  1 | 实收燃气费   |
+|  gas_price_count  |   number  | 否   |  1 | 应收燃气费   |
 |  gas_scale  |   number  | 否   |  1 | 收租时燃气表读数   |
 |  house_no |   string  | 是   | 0 | 房屋_id|
 |  tenant_no |   string  | 是   | 0 | 租客_id|
-|  images |   array  | 否   | ['cloud://a.png'] | 收租图片url|
+|  images |   array  | 否   | ['cloud://a.png'] | 收款图片url|
 |  mid_resource |   boolean  | 是   | true | 收租时的房屋是否代缴水电燃费用 |
 |  origin_ele_scale  |   number  | 否   |  1 | 原电表读数   |
 |  origin_gas_scale  |   number  | 否   |  1 | 原燃气表读数   |
 |  origin_water_scale  |   number  | 否   |  1 | 原水表读数   |
 |  origin_rent_deadline  |   date  | 否   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 原收租到期日   |
-|  other_price_count  |   number  | 否   |  0 | 实收其他费用   |
+|  other_price_count  |   number  | 否   |  0 | 应收其他费用   |
 |  pay_way  |   string  | 否   |  微信 | 支付方式   |
-|  ple_price_count  |   number  | 否   |  1 | 实收押金   |
-|  price_count  |   number  | 是   |  1 | 实收总计   |
+|  ple_price_count  |   number  | 否   |  1 | 应收押金   |
+|  price_count  |   number  | 是   |  1 | 应收总计   |
 |  rent_deadline  |   date  | 是   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 收租到期日   |
 |  rent_month_count  |   number  | 是   |  1 | 收租月数   |
-|  rent_price_count  |   number  | 是   |  1 | 实收租金   |
+|  rent_price_count  |   number  | 是   |  1 | 应收租金   |
+|  pay_rent_count  |   number  | 是   |  1 | 实收租金   |
+|  rest_pay_rent_count  |   number  | 是   |  1 | 待收租金   |
+|  real_pay_count  |   number  | 是   |  1 | 实收总计   |
 |  wy_price  |   number  | 是   |  1 | 收租时物业费/月   |
-|  wy_price_count  |   number  | 是   |  1 | 实收物业费   |
+|  wy_price_count  |   number  | 是   |  1 | 应收物业费   |
 
 ####  退租表（back_tenant_payment）
 | 字段名 | 类型 |是否必选|示例值|描述
@@ -177,7 +181,7 @@ https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
 |  price_count  |   number  | 是   |  1 | 补收金额总计   |
 |  rent_deadline  |   date  | 是   |  Sat Oct 16 2021 14:02:44 GMT+0800 (中国标准时间) | 退租日期   |
 |  rent_price_count  |   number  | 是   |  1 | 退回租金   |
-|  tenant  |   object  | 是   |  {} | 退租时租客的信息   |
+|  tenant  |   object  | 是   | {} | 退租时租客的信息   |
 |  tenant_no  |   string  | 是   |  1 | 租客_id   |
 |  water_price  |   number  | 否   |  1 | 退租时水费单价   |
 |  water_price_count  |   number  | 否   |  1 | 补收水费   |
