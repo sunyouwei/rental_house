@@ -8,13 +8,13 @@
 
 
 
-- [ ] 以后将完善更多资料，路过的小伙伴帮忙点个star吧
-#### [体验前请仔细阅读使用手册](https://docs.qq.com/doc/DSWtVT0F2UE15eEJU)
-https://docs.qq.com/doc/DSWtVT0F2UE15eEJU
+
+#### [体验前请仔细阅读使用手册](https://docs.qq.com/doc/DSWVaRlNUZUhKaUdR)
+https://docs.qq.com/doc/DSWVaRlNUZUhKaUdR
 
 ### 请扫码体验该小程序
 
-![微信图片_20211016190016.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9f899e7993a5473badb9443ecba58446~tplv-k3u1fbpfcp-watermark.image?)
+![扫码_搜索联合传播样式-标准色版.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8bae33b19144def81456ad2dec6dbf1~tplv-k3u1fbpfcp-watermark.image?)
 ### 数据库设计
 ####  房屋表（house）
 | 字段名 | 类型 |是否必选|示例值|描述
